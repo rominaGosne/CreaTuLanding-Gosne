@@ -1,9 +1,10 @@
-import cart from './assets/carrito-de-compras.png'
+import { Badge } from 'react-bootstrap'
+import cart from './assets/pngegg.png'
 const CartWidget =()=> {
     return(
-        <div>
-            <img src={cart} alt='carrito-de-compras'/>
-            0
+        <div  className="mx-3 my-2">
+            <img src={cart} width={30} height={30}  alt='pngegg.png'/>
+            <Badge className='mx-1' bg="secondary">6</Badge>
         </div>
     )
 }
