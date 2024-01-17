@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CartWidget from "../CartWidget/CartWidget"
 import { Navbar, Nav, Container } from "react-bootstrap"
 const NavBar = () => {
@@ -10,17 +11,19 @@ const NavBar = () => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#home">Home</Nav.Link>
-                                <Nav.Link href="#link">Productos</Nav.Link>
-                                <Nav.Link href="#link">Contacto</Nav.Link>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <Link to={'/'} className="mx-3"> Home </Link>
+                                    <Link to={'/category/celular'} className="mx-3"> Celulares </Link>
+                                    <Link to={'/category/tablet'} className="mx-3"> Tablet </Link>
+                                </div>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
-                    <CartWidget/>
+                    <CartWidget />
                 </Navbar>
             </div>
         </nav>
     )
 }
 
-export default NavBar
+export default NavBar;
