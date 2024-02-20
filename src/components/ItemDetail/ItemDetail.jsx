@@ -1,44 +1,39 @@
-
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Button from '../Button/Button'
+import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({ producto }) => {
     const [counter, setCounter] = useState(1)
-    const [addedProduct, setAddedProduct] = useState({})
+    const { addToCart, isInCart } = useContext(CartContext)
 
+    const handleAdd = () => setCounter(counter + 1)
+    const handleSubstract = () => setCounter(counter - 1)
+    const handleAddToCart = () => addToCart({ ...producto, cantidad: counter })
 
-    const handleAdd = () =>{
-        setCounter(counter+1)
-    }
-    const handleSubstract = () =>{
-        setCounter(counter-1)
-    }
-
-    const handleAddToCart = () => {
-        setAddedProduct({...producto, cantidad:counter})
-        console.log(addedProduct)
-    }
-
-  return (
-    <>
-    {producto&&
-        <>
-        {/* <div>{producto.id}</div> */}
-        <div>{producto.name}</div>
-        <div>{producto.price}</div>
-        <div>{producto.description}</div>
-        <img src={producto.img} alt="" />
-        <div>
-        <Button label='-' callback={handleSubstract} />
-        <div>cantidad: {counter}</div>
-        <Button label='+' callback={handleAdd} />
-        <Button label='Agregar al carrito' callback={handleAddToCart}/>
+    return (
+        <div className="card mt-5">
+            {producto &&
+                <>
+                    <div className="card-body">
+                        <h5 className="card-title">{producto.name}</h5>
+                        <p className="card-text">{producto.description}</p>
+                        <img src={producto.img} className="card-img-top" alt="" style={{ maxWidth: '50%', height: 'auto' }} />
+                        <p className="card-text">$ {producto.price}</p>
+                        <div className="btn-group" role="group">
+                            <button className="btn btn-light" onClick={handleSubstract}>-</button>
+                            <span className="btn btn-light">{counter}</span>
+                            <button className="btn btn-light" onClick={handleAdd}>+</button>
+                        </div>
+                        {isInCart(producto.id) ?
+                            <Link to='/cart' className="btn btn-primary mt-2">Ir al Carrito</Link> :
+                            <button className="btn btn-primary mt-2" onClick={handleAddToCart}>Agregar al Carrito</button>
+                        }
+                    </div>
+                </>
+            }
         </div>
-        </>
-    }
-    </>
-  )
+    )
 }
 
 export default ItemDetail
-

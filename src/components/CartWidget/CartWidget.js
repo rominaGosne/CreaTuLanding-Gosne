@@ -1,11 +1,21 @@
-import { Badge } from 'react-bootstrap'
-import cart from './assets/pngegg.png'
-const CartWidget =()=> {
-    return(
-        <div  className="mx-3 my-2">
-            <img src={cart} width={30} height={30}  alt='pngegg.png'/>
-            <Badge className='mx-1' bg="secondary">6</Badge>
-        </div>
-    )
+import React, { useContext } from 'react'
+import { GiShoppingCart } from "react-icons/gi";
+import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+
+
+const CartWidget = () => {
+
+  const {itemQuantity} = useContext(CartContext)
+
+  return (
+    <Link to='/cart'>
+    <div className='text-white flex items-center'>
+        <GiShoppingCart className='text-2xl'/>
+        <span>{itemQuantity()}</span>
+    </div>
+    </Link>
+  )
 }
+
 export default CartWidget

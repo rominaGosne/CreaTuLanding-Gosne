@@ -15,6 +15,7 @@ const NavBar = () => {
                                     <Link to={'/'} className="mx-3"> Home </Link>
                                     <Link to={'/category/celular'} className="mx-3"> Celulares </Link>
                                     <Link to={'/category/tablet'} className="mx-3"> Tablet </Link>
+                                    <Link to={'/admin'} className="mx-3"> Admin </Link>
                                 </div>
                             </Nav>
                         </Navbar.Collapse>

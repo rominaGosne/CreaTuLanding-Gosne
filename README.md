@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Ecommerce App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación de Ecommerce desarrollada en React.js, react-bootstrap y Firebase.
 
-## Available Scripts
+## Tabla de Contenidos
 
-In the project directory, you can run:
+1. [Instalación](#instalación)
+2. [Uso](#uso)
+3. [Características](#características)
 
-### `npm start`
+## Instalación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clona este repositorio en tu máquina local ejecutando el siguiente comando en tu terminal:
+`git clone https://github.com/rominaGosne/CreaTuLanding-Gosne`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Navega al directorio del proyecto:
 
-### `npm test`
+    `cd ecommerce-app`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Instala las dependencias del proyecto ejecutando:
 
-### `npm run build`
+    `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Crea un archivo `.env` en la raíz del proyecto y configura las variables de entorno necesarias:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    `
+    REACT_APP_APIKEY=TuApiKey
+    REACT_APP_AUTHDOMAIN=TuAuthDomain
+    REACT_APP_PROJECTID=TuProjectId
+    REACT_APP_STORAGEBUCKET=TuStorageBucket
+    REACT_APP_MESSAGINGSENDERID=TuMessagingSenderId
+    REACT_APP_APPID=TuAppId
+    `
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Uso
 
-### `npm run eject`
+Para utilizar la aplicación de ecommerce, sigue estos pasos:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Asegúrate de haber configurado Firebase correctamente (ver [Configuración de Firebase](#configuración-de-firebase)).
+1. Inicia la aplicación ejecutando el siguiente comando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    `npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Abre tu navegador web y visita [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Explora la tienda, agrega productos al carrito y procede al proceso de pago.
 
-## Learn More
+## Configuración de Firebase
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para configurar Firebase y obtener las credenciales necesarias, sigue estos pasos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Visita [Firebase Console](https://console.firebase.google.com/).
 
-### Code Splitting
+1. Crea un nuevo proyecto de Firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. En la sección "Project Overview", haz clic en el botón "Agregar aplicación" para agregar una nueva aplicación web.
 
-### Analyzing the Bundle Size
+1. Sigue las instrucciones para registrar tu aplicación y obtener las credenciales necesarias (apiKey, authDomain, projectId, etc.).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Copia las credenciales y pégala en el archivo `.env` en tu proyecto.
 
-### Making a Progressive Web App
+## Características
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Exploración de productos:** Los usuarios pueden explorar una variedad de productos disponibles en la tienda.
+- **Agrega al carrito:** Los usuarios pueden agregar productos al carrito de compras.
+- **Proceso de pago:** Los usuarios pueden completar el proceso de pago proporcionando detalles de envío y pago.
+- **Gestión del carrito:** Los usuarios pueden ver y editar los productos en su carrito de compras.
 
-### Advanced Configuration
+## Créditos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto fue desarrollado por Romina Gosne para el curso de React Js - Coderhouse.
